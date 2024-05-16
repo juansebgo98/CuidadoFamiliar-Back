@@ -48,4 +48,10 @@ public class CitaMedicaServiceImpl implements ICitaMedica {
 
 	}
 
+	@Override
+	@Transactional(readOnly = true)
+	public List<CitaMedica> finByPersonaMayor(Long idPersonaMayor) {
+		return citaMedicaDao.obtenerCitaMedicaPersonaMayor(idPersonaMayor);
+	}
+
 }

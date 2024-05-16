@@ -11,6 +11,8 @@ public interface ICitaMedica {
 
 	public Page<CitaMedica> findAll(Pageable pageable);
 
+	public List<CitaMedica> finByPersonaMayor(Long idPersonaMayor);
+
 	public CitaMedica findById(Long id);
 
 	public CitaMedica saveUpdate(CitaMedica citaMedica);
