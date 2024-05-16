@@ -1,4 +1,4 @@
-package com.juanseb.gs.cuidadofamiliar.model.service;
+package com.juanseb.gs.cuidadofamiliar.model.service.impl;
 
 import java.util.List;
 
@@ -8,11 +8,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import com.juanseb.gs.cuidadofamiliar.model.dao.IUsuarioDao;
 import com.juanseb.gs.cuidadofamiliar.model.entity.Usuario;
+import com.juanseb.gs.cuidadofamiliar.model.service.inter.IUsuarioService;
 
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class UsuarioServiceImpl implements IUsuario {
+public class UsuarioServiceImpl implements IUsuarioService {
 
 	@Autowired
 	private IUsuarioDao usuarioDao;
@@ -46,6 +47,11 @@ public class UsuarioServiceImpl implements IUsuario {
 	public void delete(Long id) {
 		usuarioDao.deleteById(id);
 
+	}
+
+	@Override
+	public List<Usuario> findByPersonaMayor(Long idPersonaMayor) {
+		return usuarioDao.obtenerUsuarioPersonaMayor(idPersonaMayor);
 	}
 
 }

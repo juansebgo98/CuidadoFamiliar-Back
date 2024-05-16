@@ -1,11 +1,11 @@
-package com.juanseb.gs.cuidadofamiliar.model.service;
+package com.juanseb.gs.cuidadofamiliar.model.service.inter;
 
 import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import com.juanseb.gs.cuidadofamiliar.model.entity.CitaMedica;
 
-public interface ICitaMedica {
+public interface ICitaMedicaService {
 
 	public List<CitaMedica> findAll();
 

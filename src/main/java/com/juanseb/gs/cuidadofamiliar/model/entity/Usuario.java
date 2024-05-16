@@ -14,7 +14,7 @@ public class Usuario {
 
     private String nombre;
     private String nombreDeUsuario;
-    private String contrasena; // Renombrado de "contraseña" a "contrasena"
+    private String contrasena; 
     private String email;
     private String telefono;
     

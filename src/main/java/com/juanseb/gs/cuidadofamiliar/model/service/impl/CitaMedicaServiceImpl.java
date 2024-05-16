@@ -1,4 +1,4 @@
-package com.juanseb.gs.cuidadofamiliar.model.service;
+package com.juanseb.gs.cuidadofamiliar.model.service.impl;
 
 import java.util.List;
 
@@ -8,11 +8,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import com.juanseb.gs.cuidadofamiliar.model.dao.ICitaMedicaDao;
 import com.juanseb.gs.cuidadofamiliar.model.entity.CitaMedica;
+import com.juanseb.gs.cuidadofamiliar.model.service.inter.ICitaMedicaService;
 
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class CitaMedicaServiceImpl implements ICitaMedica {
+public class CitaMedicaServiceImpl implements ICitaMedicaService {
 
 	@Autowired
 	private ICitaMedicaDao citaMedicaDao;
