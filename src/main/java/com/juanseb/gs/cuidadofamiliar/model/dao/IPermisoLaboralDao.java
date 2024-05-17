@@ -12,6 +12,6 @@ public interface IPermisoLaboralDao extends JpaRepository<PermisoLaboral, Long> 
 
 	// Implementacion de query para base de datos
 	@Query("SELECT p FROM PermisoLaboral p INNER JOIN Usuario u ON u.id = p.usuario.id WHERE p.usuario.id = :usuarioId")
-	public List<PermisoLaboral> obtenerMedicamentoUsuario(@Param("usuarioId") Long usuarioId);
+	public List<PermisoLaboral> obtenerPermisoLaboralUsuario(@Param("usuarioId") Long usuarioId);
 
 }
