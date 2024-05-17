@@ -10,6 +10,6 @@ import com.juanseb.gs.cuidadofamiliar.model.entity.Usuario;
 public interface IUsuarioDao extends JpaRepository<Usuario, Long> {
 
 	// Implementacion de query para base de datos
-	@Query("SELECT u FROM Usuario u INNER JOIN UsuarioPersonaMayor up ON up.id.usuarioId = u.id WHERE u.id = :personaMayorId")
+	@Query("SELECT u FROM Usuario u INNER JOIN UsuarioPersonaMayor up ON up.id.usuarioId = u.id WHERE up.id.personaMayorId = :personaMayorId")
 	public List<Usuario> obtenerUsuarioPersonaMayor(@Param("personaMayorId") Long personaMayorId);
 }
