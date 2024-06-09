@@ -7,8 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import com.juanseb.gs.cuidadofamiliar.model.entity.Ticket;
-// LISTO,					LISTO									
-//Ticjets persona mayor, tickest correspondientes a una cita,  han sido utilizados, y los que no.
+
 
 public interface ITicketDao extends JpaRepository<Ticket, Long>{
 	

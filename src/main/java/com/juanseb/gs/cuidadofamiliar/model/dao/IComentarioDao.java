@@ -13,4 +13,8 @@ public interface IComentarioDao extends JpaRepository<Comentario, Long> {
 	@Query("SELECT c FROM Comentario c INNER JOIN PersonaMayor p ON p.id = c.personaMayor.id WHERE c.personaMayor.id = :personaMayorId")
 	public List<Comentario> obtenerComentariosPersonaMayor(@Param("personaMayorId") Long personaMayorId);
 
+	@Query("SELECT c FROM Comentario c INNER JOIN Usuario u ON u.id = c.usuario.id WHERE u.id =:usuarioId ")
+	public List<Comentario> obtenerComentariosUsuario(@Param("usuarioId") Long usuarioId);
+	
+	
 }
