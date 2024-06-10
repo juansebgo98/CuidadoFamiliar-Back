@@ -19,13 +19,13 @@ import com.juanseb.gs.cuidadofamiliar.model.service.inter.ICitaMedicaService;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/citaMedica")
 public class CitaMedicaRestController {
 
 	@Autowired
 	private ICitaMedicaService citaMedicaService;
 
-	@GetMapping("/citaMedica/PersonaMayor/{id}")
+	@GetMapping("/PersonaMayor/{id}")
 	public ResponseEntity<?> index(@PathVariable Long id) {
 		Map<String, Object> response = new HashMap<>();
 		List<CitaMedica> citaMedica = citaMedicaService.finByPersonaMayor(id);
