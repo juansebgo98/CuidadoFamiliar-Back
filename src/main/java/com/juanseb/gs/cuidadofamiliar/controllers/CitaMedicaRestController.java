@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.juanseb.gs.cuidadofamiliar.model.entity.Citamedica;
+import com.juanseb.gs.cuidadofamiliar.model.entity.CitaMedica;
+import com.juanseb.gs.cuidadofamiliar.model.service.inter.ICitaMedicaService;
+
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
@@ -21,19 +23,16 @@ import com.juanseb.gs.cuidadofamiliar.model.entity.Citamedica;
 public class CitaMedicaRestController {
 
 	@Autowired
-	// private IPersonaMayorService personaMayorService;
-
-	@GetMapping("/citaMedica")
-	public List<Citamedica> index() {
-		// TODO return personaMayorService.findAll();
-		return null;
-	}
+	private ICitaMedicaService citaMedicaService;
 
 	@GetMapping("/citaMedica/PersonaMayor/{id}")
 	public ResponseEntity<?> index(@PathVariable Long id) {
 		Map<String, Object> response = new HashMap<>();
-		// List<PersonaMayor> almacenamiento =
-		// personaMayorService.obtenerCitaMedicaPersonaMayor(id);
-		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		List<CitaMedica> citaMedica = citaMedicaService.finByPersonaMayor(id);
+		if(citaMedica.isEmpty()) {
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<List<CitaMedica>>(citaMedica, HttpStatus.OK);
+		
 	}
 }
