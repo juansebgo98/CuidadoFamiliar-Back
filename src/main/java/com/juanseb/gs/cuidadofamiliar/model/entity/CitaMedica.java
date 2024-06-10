@@ -14,7 +14,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "cita_medica")
-public class Citamedica implements Serializable {
+public class CitaMedica implements Serializable {
 
     private static final long serialVersionUID = -442413214300424185L;
 

@@ -20,7 +20,7 @@ public class InformeMedico implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "citamedicaId")
-	private Citamedica citamedica;
+	private CitaMedica citamedica;
 
 	public Long getId() {
 		return id;
@@ -46,11 +46,11 @@ public class InformeMedico implements Serializable {
 		this.descripcion = descripcion;
 	}
 
-	public Citamedica getCitaMedica() {
+	public CitaMedica getCitaMedica() {
 		return citamedica;
 	}
 
-	public void setCitaMedica(Citamedica citaMedica) {
+	public void setCitaMedica(CitaMedica citaMedica) {
 		this.citamedica = citaMedica;
 	}
 

@@ -18,7 +18,7 @@ public class Ticket implements Serializable {
 
 	@ManyToOne
 	@JoinColumn(name = "citaMedicaId")
-	private Citamedica citaMedica;
+	private CitaMedica citaMedica;
 
 	@ManyToOne
 	@JoinColumn(name = "personaMayorId")
@@ -40,11 +40,11 @@ public class Ticket implements Serializable {
 		this.fechaDeCompra = fechaDeCompra;
 	}
 
-	public Citamedica getCitaMedica() {
+	public CitaMedica getCitaMedica() {
 		return citaMedica;
 	}
 
-	public void setCitaMedica(Citamedica citaMedica) {
+	public void setCitaMedica(CitaMedica citaMedica) {
 		this.citaMedica = citaMedica;
 	}
 
