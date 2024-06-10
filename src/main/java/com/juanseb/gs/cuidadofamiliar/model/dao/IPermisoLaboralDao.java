@@ -12,10 +12,10 @@ import com.juanseb.gs.cuidadofamiliar.model.entity.PermisoLaboral;
 public interface IPermisoLaboralDao extends JpaRepository<PermisoLaboral, Long> {
 
 	// Implementacion de query para base de datos
-	@Query("SELECT pl from PermisoLaboral WHERE pl.fechaDeInicioDelPermiso < fecha")
+	@Query("SELECT pl from PermisoLaboral pl WHERE pl.fechaDeInicioDelPermiso < :fecha")
 	public List<PermisoLaboral> obtenerPermisoLaboralAnteriorFecha(@Param("fecha")Date fecha);
 	
-	@Query("SELECT pl from PermisoLaboral WHERE pl.fechaDeInicioDelPermiso = fecha")
+	@Query("SELECT pl from PermisoLaboral pl WHERE pl.fechaDeInicioDelPermiso = :fecha")
 	public PermisoLaboral obtenerPermisoFecha(@Param("fecha") Date fecha);
 
 

@@ -11,7 +11,7 @@ import com.juanseb.gs.cuidadofamiliar.model.entity.Medicamento;
 public interface IMedicamentoDao extends JpaRepository<Medicamento, Long> {
 
 	// Implementacion de query para base de datos
-	@Query("SELECT m FROM Medicamento m INNER JOIN PersonaMayor p ON p.id = m.personaMayor.id WHERE p.personaMayor.id = :personaMayorId")
+	@Query("SELECT m FROM Medicamento m INNER JOIN PersonaMayor p ON p.id = m.personaMayor.id WHERE p.id = :personaMayorId")
 	public List<Medicamento> obtenerMedicamentoPersonaMayor(@Param("personaMayorId") Long personaMayorId);
 
 }

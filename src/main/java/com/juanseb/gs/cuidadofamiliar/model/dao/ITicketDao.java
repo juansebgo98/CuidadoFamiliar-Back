@@ -12,15 +12,15 @@ import com.juanseb.gs.cuidadofamiliar.model.entity.Ticket;
 public interface ITicketDao extends JpaRepository<Ticket, Long>{
 	
 	// Implementacion de query para base de datos
-	@Query("SELECT Tk from Tickets as Tk INNER JOIN PersonaMayor as Pm ON Tk.personaMayor.id = Pm.id WHERE  Pm.id =:personaMayorId")
+	@Query("SELECT Tk from Ticket as Tk INNER JOIN PersonaMayor as Pm ON Tk.personaMayor.id = Pm.id WHERE  Pm.id =:personaMayorId")
 	public List<Ticket> obtenerTiketsPersonaMayor(@Param("personaMayorId") Long personaMayorId);
 	
-	@Query("SELECT Tk from Tickets as Tk INNER JOIN CitaMedica as Cm ON Tk.citaMedica.id = Cm.id WHERE Cm.id= :citaMedicaId")
+	@Query("SELECT Tk from Ticket as Tk INNER JOIN CitaMedica as Cm ON Tk.citaMedica.id = Cm.id WHERE Cm.id= :citaMedicaId")
 	public Ticket obtenerTicketCitaMedica(@Param("citaMedicaId") Long citaMedicaId );
 	
-	@Query("SELECT Tk from Tickets as Tk WHERE Tk.citaMedica != NULL")
+	@Query("SELECT Tk from Ticket as Tk WHERE Tk.citaMedica != NULL")
 	public List<Ticket> obtenerTiketsUtilizados();
 	
-	@Query("SELECT Tk from Tickets as Tk WHERE Tk.citaMedica = NULL")
+	@Query("SELECT Tk from Ticket as Tk WHERE Tk.citaMedica = NULL")
 	public List<Ticket> obtenerTiketsNoUtilizados();
 }
